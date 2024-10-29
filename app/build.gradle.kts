@@ -2,6 +2,8 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     id("com.google.gms.google-services")
+    id("com.google.dagger.hilt.android")
+    id("com.google.devtools.ksp") version "2.0.20-1.0.25"
 }
 
 android {
@@ -57,4 +59,9 @@ dependencies {
     implementation (platform(libs.firebase.bom))
     //Firestore
     implementation(libs.firebase.firestore)
+    //Fragment
+    implementation(libs.androidx.fragment.ktx)
+    //Hilt
+    implementation(libs.hilt.android)
+    ksp(libs.hilt.compiler)
 }
