@@ -8,6 +8,10 @@ android {
     namespace = "com.vaibhavranga.firebasewithmvvm"
     compileSdk = 34
 
+    buildFeatures {
+        viewBinding = true
+    }
+
     defaultConfig {
         applicationId = "com.vaibhavranga.firebasewithmvvm"
         minSdk = 24
@@ -43,10 +47,14 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
-    implementation(libs.firebase.firestore)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    //Jetpack navigation component
+    implementation(libs.androidx.navigation.fragment.ktx)
+    implementation(libs.androidx.navigation.ui.ktx)
     // Import the BoM for the Firebase platform
     implementation (platform(libs.firebase.bom))
+    //Firestore
+    implementation(libs.firebase.firestore)
 }
